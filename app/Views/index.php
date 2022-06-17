@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +17,11 @@ http://www.tooplate.com/view/2080-minimax
 
 -->
 	<!-- stylesheet css -->
-	<link rel="stylesheet" href="<?php base_url('/css/bootstrap.min.css'); ?>">
-	<link rel="stylesheet" href="<?php base_url('/css/font-awesome.min.css'); ?>">
-	<link rel="stylesheet" href="<?php base_url('/css/nivo-lightbox.css'); ?>">
-	<link rel="stylesheet" href="<?php base_url('/css/nivo_themes/default/default.css'); ?>">
-	<link rel="stylesheet" href="<?php base_url('/css/style.css'); ?>">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/nivo-lightbox.css">
+	<link rel="stylesheet" href="assets/css/nivo_themes/default/default.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 	<!-- google web font css -->
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'>
 
@@ -38,14 +37,15 @@ http://www.tooplate.com/view/2080-minimax
 				<span class="icon icon-bar"></span>
 				<span class="icon icon-bar"></span>
 			</button>
-			<a href="#home" class="navbar-brand smoothScroll">Label</a>
+			<a href="#home" class="navbar-brand smoothScroll">Minimax</a>
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#home" class="smoothScroll">HOME</a></li>
 				<li><a href="#service" class="smoothScroll">SERVICE</a></li>
 				<li><a href="#about" class="smoothScroll">ABOUT</a></li>
-				
+				<li><a href="#portfolio" class="smoothScroll">PORTFOLIO</a></li>
+				<li><a href="#pricing" class="smoothScroll">PRICE</a></li>
 				<li><a href="#contact" class="smoothScroll">CONTACT</a></li>
 			</ul>
 		</div>
@@ -58,9 +58,9 @@ http://www.tooplate.com/view/2080-minimax
 		<div class="row">
 			<div class="col-md-offset-6 col-md-6 col-sm-offset-6 col-sm-6">
 				<h2>Welcome to</h2>
-				<h1>Label <strong>legal Digital Firm</strong></h1>
-				<strong><p><strong>Come to us with all your Legal Needs.</strong></p></strong>
-				<a href="1.html" class="btn btn-default smoothScroll">GET STARTED</a>
+				<h1>Minimax <strong>Digital Firm</strong></h1>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
+				<a href="#service" class="btn btn-default smoothScroll">GET STARTED</a>
 			</div>
 		</div>
 	</div>
@@ -111,7 +111,7 @@ http://www.tooplate.com/view/2080-minimax
 				<h2>Minimax Story</h2>
 			</div>
 			<div class="col-md-6 col-sm-6">
-				<img src="images/about-img.jpg" class="img-responsive" alt="about img">
+				<img src="assets/images/about-img.jpg" class="img-responsive" alt="about img">
 			</div>
 			<div class="col-md-6 col-sm-6">
 				<h3>ABOUT US</h3>
@@ -142,35 +142,212 @@ http://www.tooplate.com/view/2080-minimax
 				<h2>People behind the firm</h2>
 			</div>
 			<div class="col-md-3 col-sm-6">
-				<img src="images/team1.jpg" class="img-responsive" alt="team img">
+				<img src="assets/images/team1.jpg" class="img-responsive" alt="team img">
 				<h3>Jonny Thinker</h3>
 				<h4>Creative Director</h4>
 			</div>
 			<div class="col-md-3 col-sm-6">
-				<img src="images/team2.jpg" class="img-responsive" alt="team img">
+				<img src="assets/images/team2.jpg" class="img-responsive" alt="team img">
 				<h3>Michael</h3>
 				<h4>CEO / Cc-founder</h4>
 			</div>
 			<div class="col-md-3 col-sm-6">
-				<img src="images/team3.jpg" class="img-responsive" alt="team img">
+				<img src="assets/images/team3.jpg" class="img-responsive" alt="team img">
 				<h3>George Walker</h3>
-				<h4>Administrative Director</h4>
+				<h4>Chief Designer</h4>
 			</div>
 			<div class="col-md-3 col-sm-6">
-				<img src="images/team4.jpg" class="img-responsive" alt="team img">
+				<img src="assets/images/team4.jpg" class="img-responsive" alt="team img">
 				<h3>Mary Sandar</h3>
-				<h4>Legal Specialist</h4>
+				<h4>UX Specialist</h4>
 			</div>
 		</div>
 	</div>
 </div>
 
+<!-- divider section -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-1 col-sm-1"></div>
+		<div class="col-md-10 col-sm-10">
+			<hr>
+		</div>
+		<div class="col-md-1 col-sm-1"></div>
+	</div>
+</div>
 
+<!-- portfolio section -->
+<div id="portfolio">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<div class="title">
+					<h2>6</h2>
+				</div>
+				<!-- ISO section -->
+				<div class="iso-section">
+					<ul class="filter-wrapper clearfix">
+                   		 <li><a href="#" data-filter="*" class="selected opc-main-bg">All</a></li>
+                   		 <li><a href="#" class="opc-main-bg" data-filter=".html">HTML</a></li>
+                   		 <li><a href="#" class="opc-main-bg" data-filter=".photoshop">Photoshop</a></li>
+                    	 <li><a href="#" class="opc-main-bg" data-filter=".wordpress">Wordpress</a></li>
+                    	 <li><a href="#" class="opc-main-bg" data-filter=".mobile">Mobile</a></li>
+               		</ul>
+               		<div class="iso-box-section">
+               			<div class="iso-box-wrapper col4-iso-box">
 
+               				<div class="iso-box html photoshop wordpress mobile col-md-4 col-sm-6 col-xs-12">
+               				 	<a href="assets/images/portfolio-img1.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img1.jpg" alt="portfolio img"></a>
+               				 </div>
+
+               				 <div class="iso-box html wordpress mobile col-md-4 col-sm-6 col-xs-12">
+               				 	<a href="images/portfolio-img2.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img2.jpg" alt="portfolio img"></a>
+               				 </div>
+
+               				 <div class="iso-box wordpress col-md-4 col-sm-6 col-xs-12">
+               				 	<a href="assets/images/portfolio-img3.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img3.jpg" alt="portfolio img"></a>
+               				 </div>
+
+               				 <div class="iso-box html mobile col-md-6 col-sm-6 col-xs-12">
+               				 	<a href="assets/images/portfolio-img4.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img4.jpg" alt="portfolio img"></a>
+               				 </div>
+
+               				 <div class="iso-box wordpress col-md-6 col-sm-6 col-xs-12">
+               				 	<a href="assets/images/portfolio-img5.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img5.jpg" alt="portfolio img"></a>
+               				 </div>
+
+               				 <div class="iso-box html photoshop col-md-4 col-sm-6 col-xs-12">
+               				 	<a href="images/portfolio-img6.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img6.jpg" alt="portfolio img"></a>
+               				 </div>
+
+               				 <div class="iso-box photoshop col-md-4 col-sm-6 col-xs-12">
+               				 	<a href="assets/images/portfolio-img7.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img7.jpg" alt="portfolio img"></a>
+               				 </div>
+
+               				 <div class="iso-box wordpress col-md-4 col-sm-6 col-xs-12">
+               				 	<a href="assets/images/portfolio-img8.jpg" data-lightbox-gallery="portfolio-gallery"><img src="images/portfolio-img8.jpg" alt="portfolio img"></a>
+               				 </div>
+
+               			</div>
+               		</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>		
+
+<!-- divider section -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-1 col-sm-1"></div>
+		<div class="col-md-10 col-sm-10">
+			<hr>
+		</div>
+		<div class="col-md-1 col-sm-1"></div>
+	</div>
+</div>
+
+<!-- pricing section -->
+<div id="pricing">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<h2>Our Pricing</h2>
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-10">
+				<div class="plan">
+					<div class="plan-title">
+						<h3>Starter</h3>
+						<small>$100 per month</small>
+					</div>
+					<ul>
+						<li>100 GB STORAGE</li>
+						<li>10 TB BANDWIDTH</li>
+						<li>10 BASIC THEMES</li>
+						<li>24-HOUR RESPONSE</li>
+					</ul>
+					<button class="btn btn-warning">Sign Up</button>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-10">
+				<div class="plan">
+					<div class="plan-title">
+						<h3>Business</h3>
+						<small>$350 per month</small>
+					</div>
+					<ul>
+						<li>1,000 GB STORAGE</li>
+						<li>50 TB BANDWIDTH</li>
+						<li>50 PRO THEMES</li>
+						<li>1-HOUR RESPONSE</li>
+					</ul>
+					<button class="btn btn-warning">Sign Up</button>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-10">
+				<div class="plan">
+					<div class="plan-title">
+						<h3>Advanced</h3>
+						<small>$500 per month</small>
+					</div>
+					<ul>
+						<li>2,000 GB STORAGE</li>
+						<li>100 TB BANDWIDTH</li>
+						<li>100 PREMIUM THEMES</li>
+						<li>30-MIN RESPONSE</li>
+					</ul>
+					<button class="btn btn-warning">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- divider section -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-1 col-sm-1"></div>
+		<div class="col-md-10 col-sm-10">
+			<hr>
+		</div>
+		<div class="col-md-1 col-sm-1"></div>
+	</div>
+</div>
 
 <!-- contact section -->
 <div id="contact">
-	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+				<h2>Keep in touch</h2>
+			</div>
+			<form action="#" method="post" role="form">
+				<div class="col-md-1 col-sm-1"></div>
+				<div class="col-md-10 col-sm-10">
+					<div class="col-md-6 col-sm-6">
+						<input name="name" type="text" class="form-control" id="name" placeholder="Name">
+				  	</div>
+					<div class="col-md-6 col-sm-6">
+						<input name="email" type="email" class="form-control" id="email" placeholder="Email">
+				  	</div>
+                    <div class="col-md-12 col-sm-12">
+						<input name="subject" type="text" class="form-control" id="subject" placeholder="Subject">
+	    	  	  	</div>
+					<div class="col-md-12 col-sm-12">
+						<textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
+					</div>
+					<div class="col-md-8 col-sm-8">
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy</p>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<input name="submit" type="submit" class="form-control" id="submit" value="SEND MESSAGE">
+					</div>
+				</div>
+				<div class="col-md-1 col-sm-1"></div>
+			</form>
+		</div>
+	</div>
 </div>
 
 <!-- divider section -->
@@ -190,9 +367,9 @@ http://www.tooplate.com/view/2080-minimax
 		<div class="row">
 			<div class="col-md-6 col-sm-6">
 				<h2>Our Office</h2>
-				<p>101 Clean Street, CBD NAIROBI, CA 10110</p>
-				<p>Email: <span>label@company.com</span></p>
-				<p>Phone: <span>0700-020-034</span></p>
+				<p>101 Clean Street, California, CA 10110</p>
+				<p>Email: <span>hello@company.com</span></p>
+				<p>Phone: <span>010-020-0340</span></p>
 			</div>
 			<div class="col-md-6 col-sm-6">
 				<h2>Social Us</h2>
@@ -223,9 +400,9 @@ http://www.tooplate.com/view/2080-minimax
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
-				<p>Copyright &copy; 2020 Label Digital Firm 
+				<p>Copyright &copy; 2016 Minimax Digital Firm 
                 
-                - Design: tooplate</p>
+                - Design: <a rel="nofollow" href="http://www.tooplate.com" target="_parent">Tooplate</a></p>
 			</div>
 		</div>
 	</div>
@@ -236,14 +413,14 @@ http://www.tooplate.com/view/2080-minimax
 
 
 <!-- javascript js -->	
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>	
-<script src="js/nivo-lightbox.min.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/jquery.nav.js"></script>
-<script src="js/isotope.js"></script>
-<script src="js/imagesloaded.min.js"></script>
-<script src="js/custom.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>	
+<script src="assets/js/nivo-lightbox.min.js"></script>
+<script src="assets/js/smoothscroll.js"></script>
+<script src="assets/js/jquery.nav.js"></script>
+<script src="assets/js/isotope.js"></script>
+<script src="assets/js/imagesloaded.min.js"></script>
+<script src="assets/js/custom.js"></script>
 
 </body>
 </html>
