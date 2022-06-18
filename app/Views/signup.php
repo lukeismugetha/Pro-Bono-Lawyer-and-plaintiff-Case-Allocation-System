@@ -91,27 +91,38 @@ http://www.tooplate.com/view/2080-minimax
 				<div class="col-md-1 col-sm-1"></div>
 				<div class="col-md-10 col-sm-10">
 					<div class="col-md-6 col-sm-6">
-						<input name="First_Name" type="text" class="form-control" id="First_Name" placeholder="First Name">
+						<input name="First_Name" <?=set_value('First_Name') ?> required type="text" class="form-control" id="First_Name" placeholder="First Name">
 				  	</div>
 					  <div class="col-md-6 col-sm-6">
-						<input name="Last_Name" type="text" class="form-control" id="Last_Name" placeholder="Last Name">
+						<input name="Last_Name" <?=set_value('Last_Name') ?> required type="text" class="form-control" id="Last_Name" placeholder="Last Name">
 				  	</div>
 					<div class="col-md-6 col-sm-6">
-						<input name="Email" type="email" class="form-control" id="email" placeholder="email">
+						<input name="Email" <?=set_value('Email') ?> required type="email" class="form-control" id="email" placeholder="email">
 				  	</div>
 				  	 <div class="col-md-6 col-sm-6">
-				  	 	    <input name="role" type="radio"name="ee" value="3">civilian<br>
-				  	 	     <input name="role" type="radio"name="ee" value="2">lawyer<br>	 	      
+				  	 	    <input name="role" required type="radio"name="ee" value="3">civilian<br>
+				  	 	     <input name="role" required type="radio"name="ee" value="2">lawyer<br>	 	      
                			    
 					 </div>
                    <div class="col-md-6 col-sm-6">
-						<input name="password_1" type="password" class="form-control" id="password_1" placeholder="password">
+						<input name="password_1" required type="password" class="form-control" id="password_1" placeholder="password">
 				  	</div>
 					<div class="col-md-6 col-sm-6">
-						<input name="password_2" type="password" class="form-control" id="password_2" placeholder="confirm password">
+						<input name="password_2" type="password" required class="form-control" id="password_2" placeholder="confirm password">
 				  	</div>
+					  <div class="col-md-8 col-sm-8">
+                    <?php if(isset($validation)): ?>
+                       <div class="col-12">
+                           <div class="alert alert-danger" roles="alert">
+                               <?= $validation->listerrors()?>
+
+                           </div>
+                       </div>
+                    <?php endif; ?>
+					</div>
+			
 					<div class="col-md-8 col-sm-8">
-						<p>Thank you for Registering</p>
+					<a href="<?= base_url("/signin") ?>">Have an account? Sign in here</a>
 					</div>
 					<div class="col-md-4 col-sm-4">
 						<input name="reg_user" type="submit" class="form-control" id="submit" value="Register">

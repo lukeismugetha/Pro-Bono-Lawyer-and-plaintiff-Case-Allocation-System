@@ -60,7 +60,7 @@ http://www.tooplate.com/view/2080-minimax
 				<h2>Welcome to</h2>
 				<h1>Minimax <strong>Digital Firm</strong></h1>
 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
-				<a href="#service" class="btn btn-default smoothScroll">GET STARTED</a>
+				<a href="<?= base_url("/signup") ?>" class="btn btn-default">GET STARTED</a>
 			</div>
 		</div>
 	</div>

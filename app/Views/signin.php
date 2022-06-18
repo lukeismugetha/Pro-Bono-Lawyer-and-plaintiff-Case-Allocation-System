@@ -96,7 +96,7 @@ http://www.tooplate.com/view/2080-minimax
 						<input name="password" type="password" class="form-control" id="password" placeholder="password">
 				  	</div>
 					<div class="col-md-8 col-sm-8">
-						<p>welcome</p>
+						<a href="<?= base_url("/signup") ?>">Dont have an account? Sign up here</a>
 					</div>
 					<div class="col-md-4 col-sm-4">
 						<input name="login_user" type="submit" class="form-control" id="submit" value="Login">
