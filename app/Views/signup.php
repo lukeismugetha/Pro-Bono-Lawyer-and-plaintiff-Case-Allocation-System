@@ -25,6 +25,7 @@ http://www.tooplate.com/view/2080-minimax
 	
 	<!-- google web font css -->
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'>
+	
 
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse">
@@ -100,15 +101,18 @@ http://www.tooplate.com/view/2080-minimax
 						<input name="Email" <?=set_value('Email') ?> required type="email" class="form-control" id="email" placeholder="email">
 				  	</div>
 				  	 <div class="col-md-6 col-sm-6">
-				  	 	    <input name="role" required type="radio"name="ee" value="3">civilian<br>
-				  	 	     <input name="role" required type="radio"name="ee" value="2">lawyer<br>	 	      
+				  	 	    <input name="role" required type="radio"name="ee" value="3">
+							<label for="role">Plaintiff</label>
+				  	 	     <input name="role" required type="radio"name="ee" value="2">
+							 <label for="role">Lawyer</label>     
                			    
 					 </div>
                    <div class="col-md-6 col-sm-6">
-						<input name="password_1" required type="password" class="form-control" id="password_1" placeholder="password">
-				  	</div>
+						<input name="password_1" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" type="password" class="form-control" id="password_1"  placeholder="password">						
+					</div>
 					<div class="col-md-6 col-sm-6">
-						<input name="password_2" type="password" required class="form-control" id="password_2" placeholder="confirm password">
+						<input name="password_2" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required class="form-control" id="password_2" placeholder="confirm password">
+						<span id='message'></span>
 				  	</div>
 					  <div class="col-md-8 col-sm-8">
                     <?php if(isset($validation)): ?>
@@ -205,6 +209,28 @@ http://www.tooplate.com/view/2080-minimax
 <script src="assets/js/isotope.js"></script>
 <script src="assets/js/imagesloaded.min.js"></script>
 <script src="assets/js/custom.js"></script>
+
+<script>
+            document.getElementById("password_1").addEventListener("keyup", testpassword2);
+            document.getElementById("password_2").addEventListener("keyup", testpassword2);
+            var submitBtn = document.getElementById("submit");
+            function testpassword2() {
+            var text1 = document.getElementById("password_1");
+            var text2 = document.getElementById("password_2");
+            if(text1.value != "" && text2.value != ""){
+                if (text1.value.trim() === text2.value.trim()) {
+                    text2.style.borderColor = "#2EFE2E";
+                    submitBtn.disabled = false;
+                } 
+                else if(text1.value.trim() != text2.value.trim()) {
+                    text2.style.borderColor = "red"
+                    
+                    submitBtn.disabled = true;
+                
+                }
+            }   
+        }
+        </script>
 
 </body>
 </html>

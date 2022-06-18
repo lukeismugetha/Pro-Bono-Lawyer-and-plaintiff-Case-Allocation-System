@@ -9,7 +9,7 @@ class UserRules{
                       ->first();
         if(! $user)
             return false;
-        return password_verify($data['password'], $user['password']);
+        return password_verify($data['Password'], $user['Password']);
 
     }
 

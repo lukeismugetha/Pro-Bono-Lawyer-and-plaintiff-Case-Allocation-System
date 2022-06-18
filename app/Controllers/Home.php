@@ -11,8 +11,46 @@ class Home extends BaseController
     }
     public function signin()
     {
+        helper(['form']);
+        if($this->request->getMethod() == 'post'){
+            $rules = [
+                'Email' => 'required|min_length[7]|max_length[30]|valid_email',
+                'Password' => 'required|min_length[4]|max_length[255]|validateUser[Email,Password]',
+            ];
+            $errors = [
+                'Password' => [
+                    'validateUser' => 'Email or password dont match'
+                ]
+            ];
+
+            $userModel = new UserModel();
+            $email = $this->request->getPost('Email');
+            $password = $this->request->getPost('Password');
+            $user = $userModel->getUserWhere(['Email' => $email, 'Password' => $password,]);
+            $role = $userModel->getUser($email);
+
+            if( ! $user){
+                echo "<script> alert('Invalid email or password!'); </script>";
+            }else{       
+                if($role == '2'){
+                    echo "<script> alert('Succesful!'); </script>";
+                    echo view('Lawyer/lawyersdash');
+
+                }else if($role == '3'){
+                    echo "<script> alert('Succesful!'); </script>";
+                    echo view('Lawyer/civiliandash');
+                }
+                // else{
+                //     echo "<script> alert('Succesful!'); </script>";
+                //     echo view('Lawyer/adminssdash');
+                // }   
+
+            }
+        }
+
         return view('signin');
     }
+
 
     public function signup(){
         helper(['form']);
@@ -20,44 +58,30 @@ class Home extends BaseController
 
         if($this->request->getMethod() == 'post'){
 
-            $password = $this->request->getPost('password_1');
-            $password_2 = $this->request->getPost('password_2');
-
-        if($password == $password_2){
             $userModel = new UserModel();
              
             $rules = [
                 'Email' => 'min_length[7]|max_length[30]|valid_email|is_unique[Users.Email]',
-                'password' => 'min_length[4]|max_length[255]|validateUser'.[$password,$password_2].']',
          
-            ];
-            $errors = [
-                'password' => [
-                    'validateUser' => 'Email or password dont match'
-                ]
-
             ];
             if(! $this -> validate($rules, )){
                 $data['validation'] = $this -> validator;
                 return view('signup', $data);
             }else{
-                $password = hash('md5', $this->request->getPost('password_1'));
+                //$password = hash('md5', $this->request->getPost('password_1'));
+
                 $data = [
                     'First_Name' => $this->request->getPost('First_Name'),
                     'Last_Name' => $this->request->getPost('Last_Name'),
                     'Email' => $this->request->getPost('Email'),
-                    'password' => $password,
+                    'password' => $this->request->getPost('password_1'),
                     'role' => $this->request->getPost('role'),
                 ];
                 $userModel->insertUser($data);
                 echo "<script> alert('User Successfully Registered !'); </script>";
                 echo view('signin');
             }
-       }
-        else{
-            echo "<script> alert('Passwords do not match'); </script>";
-            echo view('signup');
-        }
+      
 
         }
 

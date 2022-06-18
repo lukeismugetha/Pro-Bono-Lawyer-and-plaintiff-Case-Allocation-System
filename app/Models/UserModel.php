@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 use Config\Database;
 
 class UserModel extends Model{
-    protected $allowedFields=['ID','First_Name','Last_Name', 'Email','password','role','Created_at',];
+    protected $allowedFields=['ID','First_Name','Last_Name', 'Email','Password','role','Created_at',];
     protected $primaryKey='ID';
     protected $table='Users';
     protected $db,$builder;
@@ -24,10 +24,11 @@ class UserModel extends Model{
     }
 
     public function getUserWhere($condition){
-        return $this->builder->where($condition)->get()->getResultArray()[0];
+        return $this->builder->where($condition)->get()->getResultArray();
     }
-
-    
+    public function getUser($email){
+        return $this->builder->where('Email',$email)->select('role');
+    }
 }
 
 ?>

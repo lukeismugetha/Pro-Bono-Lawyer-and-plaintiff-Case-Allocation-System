@@ -86,14 +86,14 @@ http://www.tooplate.com/view/2080-minimax
 			<div class="col-md-12 col-sm-12">
 				<h2>Login</h2>
 			</div>
-			<form action="server3.php" method="post" role="form">
+			<form action="<?= base_url("/signin") ?>" method="post" role="form">
 				<div class="col-md-1 col-sm-1"></div>
 				<div class="col-md-10 col-sm-10">
 					<div class="col-md-6 col-sm-6">
-						<input name="email" type="email" class="form-control" id="email" placeholder="email">
+						<input name="Email" type="email" class="form-control" id="email" placeholder="email">
 				  	</div>
                    <div class="col-md-6 col-sm-6">
-						<input name="password" type="password" class="form-control" id="password" placeholder="password">
+						<input name="Password" type="password" class="form-control" id="password" placeholder="password">
 				  	</div>
 					<div class="col-md-8 col-sm-8">
 						<a href="<?= base_url("/signup") ?>">Dont have an account? Sign up here</a>

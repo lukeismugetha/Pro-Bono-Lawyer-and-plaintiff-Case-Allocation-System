@@ -8,7 +8,10 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 
-	<title>Minimax HTML5 Free Template</title>
+
+	<title>Minimax HTML5 Free Template
+	</title>
+
 <!--
 
 Template 2080 Minimax
@@ -17,17 +20,22 @@ http://www.tooplate.com/view/2080-minimax
 
 -->
 	<!-- stylesheet css -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/nivo-lightbox.css">
-	<link rel="stylesheet" href="css/nivo_themes/default/default.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/nivo-lightbox.css">
+	<link rel="stylesheet" href="assets/css/nivo_themes/default/default.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 	<!-- google web font css -->
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'>
 
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse">
 	
+
+
+
+
+
 <!-- navigation -->
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
@@ -41,13 +49,24 @@ http://www.tooplate.com/view/2080-minimax
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="index.html">HOME</a></li>
+				<li><a href="index.html">logout</a></li>
+				<p><li></li></p>
+
+
+				
+
+
+
+
+
+
+		    </div>
+
 				
 			</ul>
 		</div>
 	</div>
 </div>		
-
 
 
 
@@ -82,24 +101,29 @@ http://www.tooplate.com/view/2080-minimax
 <!-- contact section -->
 <div id="contact">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h2>Login</h2>
-			</div>
-			<form action="server3.php" method="post" role="form">
-				<div class="col-md-1 col-sm-1"></div>
-				<div class="col-md-10 col-sm-10">
-					<div class="col-md-6 col-sm-6">
-						<input name="email" type="email" class="form-control" id="email" placeholder="email">
-				  	</div>
-                   <div class="col-md-6 col-sm-6">
-						<input name="password" type="password" class="form-control" id="password" placeholder="password">
-				  	</div>
-					<div class="col-md-8 col-sm-8">
-						<p>welcome</p>
-					</div>
+		<div class="row"><p>
+
+
+
+
+
+
+
+
+
+			<div class="col-md-12 col-sm-12"><p>
+
+
+				<h2>lawyers Dashboard</h2></p>
+			</div></p>
+			
+				
 					<div class="col-md-4 col-sm-4">
-						<input name="login_user" type="submit" class="form-control" id="submit" value="Login">
+					<form action="button.php" method="post" role="form">
+						<input name="lawyerprofile" type="submit" class="form-control" id="lawyerprofile" value="profile">
+						<input name="recommended" type="submit" class="form-control" id="recommended" value="view recommended cases">
+						<input name="registered" type="submit" class="form-control" id="registered" value="taken cases">
+					</form>
 					</div>
 				</div>
 				<div class="col-md-1 col-sm-1"></div>
@@ -171,14 +195,18 @@ http://www.tooplate.com/view/2080-minimax
 
 
 <!-- javascript js -->	
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>	
-<script src="js/nivo-lightbox.min.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/jquery.nav.js"></script>
-<script src="js/isotope.js"></script>
-<script src="js/imagesloaded.min.js"></script>
-<script src="js/custom.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>	
+<script src="assets/js/nivo-lightbox.min.js"></script>
+<script src="assets/js/smoothscroll.js"></script>
+<script src="assets/js/jquery.nav.js"></script>
+<script src="assets/js/isotope.js"></script>
+<script src="assets/js/imagesloaded.min.js"></script>
+<script src="assets/js/custom.js"></script>
+
+
+
 
 </body>
 </html>
+

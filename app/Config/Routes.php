@@ -38,6 +38,7 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->match(['get','post'], 'signup', 'Home::signup');
 $routes->match(['get','post'], 'signin', 'Home::signin');
+$routes->get('/lawyer', 'LawyerController::lawyer');
 
 /*
  * --------------------------------------------------------------------
