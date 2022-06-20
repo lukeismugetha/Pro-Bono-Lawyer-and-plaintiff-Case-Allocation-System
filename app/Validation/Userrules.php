@@ -7,9 +7,10 @@ class Userrules
 {
     public function validateUser(string $str, string $fields, array $data)
     {
+        // dd($str, $fields, $data['Email']);
         $model = new UserModel();
         $user = $model->where('Email', $data['Email'])
-            ->first();
+                ->first();
 
         if (!$user) {
             return false;

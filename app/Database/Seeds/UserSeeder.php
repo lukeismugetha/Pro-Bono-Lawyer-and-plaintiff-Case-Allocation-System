@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
 				"First_Name" => "mokaya",
 				"Last_Name" => "rahul_sharma@mail.com",
 				"Email" => "mokayasamson",
-				"password" => password_hash('mokayasamson', PASSWORD_DEFAULT),
+				"password" => 'mokayasamson',
                 "role" => 2, //lawyer 3-> plaintiff
 			],
 		]);

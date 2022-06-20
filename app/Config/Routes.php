@@ -55,6 +55,8 @@ $routes->group("plaintiff", ["filter" => "auth"], function ($routes) {
     $routes->get("/", "PlaintiffController::plaintiff");
 });
 
+$routes->get('/logout', 'Home::logout');
+
 
 // $routes->get('/lawyer', 'LawyerController::lawyer');
 // $routes->get('/plaintiff', 'PlaintiffController::plaintiff');

@@ -49,7 +49,7 @@ http://www.tooplate.com/view/2080-minimax
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="index.html">logout</a></li>
+				<li><a href="<?= base_url("/logout") ?>">logout</a></li>
 				<p></p>
 		    </div>
 
