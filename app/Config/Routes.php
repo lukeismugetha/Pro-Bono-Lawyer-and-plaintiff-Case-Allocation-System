@@ -37,8 +37,29 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->match(['get','post'], 'signup', 'Home::signup');
-$routes->match(['get','post'], 'signin', 'Home::signin');
-$routes->get('/lawyer', 'LawyerController::lawyer');
+
+$routes->match(['get','post'], 'signin', 'Home::signin',["filter" => "noauth"]);
+
+//admin routes
+$routes->group("admin", ["filter" => "auth"], function ($routes) {
+    $routes->get("/", "AdminController::index");
+});
+
+// lawyer routes
+$routes->group("lawyer", ["filter" => "auth"], function ($routes) {
+    $routes->get("/", "LawyerController::lawyer");
+});
+
+// Plaintiff routes
+$routes->group("plaintiff", ["filter" => "auth"], function ($routes) {
+    $routes->get("/", "PlaintiffController::plaintiff");
+});
+
+
+// $routes->get('/lawyer', 'LawyerController::lawyer');
+// $routes->get('/plaintiff', 'PlaintiffController::plaintiff');
+// $routes->get('/button', 'PlaintiffController::button');
+// $routes->get('/admin', 'AdminController::admin');
 
 /*
  * --------------------------------------------------------------------

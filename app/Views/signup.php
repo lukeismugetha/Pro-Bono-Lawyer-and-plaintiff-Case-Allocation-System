@@ -114,15 +114,15 @@ http://www.tooplate.com/view/2080-minimax
 						<input name="password_2" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required class="form-control" id="password_2" placeholder="confirm password">
 						<span id='message'></span>
 				  	</div>
-					  <div class="col-md-8 col-sm-8">
-                    <?php if(isset($validation)): ?>
+					<div class="col-md-8 col-sm-8">
+                    	<?php if(isset($validation)): ?>
                        <div class="col-12">
                            <div class="alert alert-danger" roles="alert">
                                <?= $validation->listerrors()?>
 
                            </div>
                        </div>
-                    <?php endif; ?>
+                    	<?php endif; ?>
 					</div>
 			
 					<div class="col-md-8 col-sm-8">
