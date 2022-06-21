@@ -50,7 +50,9 @@ http://www.tooplate.com/view/2080-minimax
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="<?= base_url("/logout") ?>">logout</a></li>
-				<p></p>
+				<p><li><?=session()->get('First_Name')?></li></p>
+
+			
 		    </div>
 
 				

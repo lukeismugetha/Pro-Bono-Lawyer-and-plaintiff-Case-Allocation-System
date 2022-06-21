@@ -12,9 +12,8 @@ class Userrules
         $user = $model->where('Email', $data['Email'])
                 ->first();
 
-        if (!$user) {
-            return false;
-        }
+        if(!$user)
+          return false;
 
         return password_verify($data['password'], $user['password']);
     }

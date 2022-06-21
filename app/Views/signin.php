@@ -85,6 +85,12 @@ http://www.tooplate.com/view/2080-minimax
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
 				<h2>Login</h2>
+				<?php if(session()->get('success')): ?>
+                <div class="alert alert-success">
+                    <?=session()->get('success') ?>
+                </div>
+
+            <?php endif; ?>
 			</div>
 			<form action="<?= base_url("/signin") ?>" method="post" role="form">
 				<div class="col-md-1 col-sm-1"></div>

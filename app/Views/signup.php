@@ -92,10 +92,10 @@ http://www.tooplate.com/view/2080-minimax
 				<div class="col-md-1 col-sm-1"></div>
 				<div class="col-md-10 col-sm-10">
 					<div class="col-md-6 col-sm-6">
-						<input name="First_Name" <?=set_value('First_Name') ?> required type="text" class="form-control" id="First_Name" placeholder="First Name">
+						<input name="First_Name" value="<?=set_value('First_Name') ?>" required type="text" class="form-control" id="First_Name" placeholder="First Name">
 				  	</div>
 					  <div class="col-md-6 col-sm-6">
-						<input name="Last_Name" <?=set_value('Last_Name') ?> required type="text" class="form-control" id="Last_Name" placeholder="Last Name">
+						<input name="Last_Name" value="<?=set_value('Last_Name') ?> "required type="text" class="form-control" id="Last_Name" placeholder="Last Name">
 				  	</div>
 					<div class="col-md-6 col-sm-6">
 						<input name="Email" <?=set_value('Email') ?> required type="email" class="form-control" id="email" placeholder="email">

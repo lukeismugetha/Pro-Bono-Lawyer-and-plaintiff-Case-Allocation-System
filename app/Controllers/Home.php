@@ -13,40 +13,8 @@ class Home extends BaseController
     }
 
 
-
-
-
-    // public function signin()
-    // {
-    //     helper(['form']);
-    //     if($this->request->getMethod() == 'post'){
-    //         $userModel = new UserModel();
-    //         $email = $this->request->getPost('Email');
-    //         $password = $this->request->getPost('password');
-    //         $user = $userModel->getUserWhere(['Email' => $email, 'password' => $password,]);
-            
-    //         if( ! $user){
-    //             echo "<script> alert('Invalid email or password!'); </script>";
-    //         }else{    
-    //                  echo "<script> alert('Succesful!'); </script>";
-    //                  echo view('Lawyer/lawyersdash');
-    //         }
-    //     }
-
-    //     return view('signin');
-    // }
-
-
-
-
-
-
-
-
-
     public function signup(){
         helper(['form']);
-        //$validation = \Config\Services::validation();
 
         if($this->request->getMethod() == 'post'){
 
@@ -54,13 +22,12 @@ class Home extends BaseController
              
             $rules = [
                 'Email' => 'min_length[7]|max_length[30]|valid_email|is_unique[Users.Email]',
-         
+               
             ];
             if(! $this -> validate($rules, )){
                 $data['validation'] = $this -> validator;
                 return view('signup', $data);
             }else{
-                //$password = hash('md5', $this->request->getPost('password_1'));
 
                 $data = [
                     'First_Name' => $this->request->getPost('First_Name'),
@@ -69,8 +36,9 @@ class Home extends BaseController
                     'password' => $this->request->getPost('password_1'),
                     'role' => $this->request->getPost('role'),
                 ];
-                $userModel->insert($data);
-                echo "<script> alert('User Successfully Registered !'); </script>";
+                $userModel->save($data);
+                $session = session();
+                $session -> setFlashdata('success', 'Sucesful registration');
                 echo view('signin');
             }
       
@@ -79,10 +47,6 @@ class Home extends BaseController
 
         return view('signup');
     }
-
-
-
-
 
 
     public function signin()
@@ -102,23 +66,19 @@ class Home extends BaseController
                 ],
             ];
             $model = new UserModel();
-                $user = $model->where('Email', $this->request->getVar('Email'))
+            $user = $model->where('Email', $this->request->getVar('Email'))
                     ->first();
 
-            if (! $user) {
-
-                return view('signin', [
-                    "validation" => $this->validator,
-                ]);
-                
-                //dd($user['role']);
-                //$data['validation'] = $this->validator;
+            // if (! $user) {
+            if (! $this -> validate($rules, $errors)) {
+     
+                $data['validation'] = $this->validator;
+                return view('signin', $data);
 
             } else {
+
                 $model = new UserModel();
 
-                $user = $model->where('Email', $this->request->getVar('Email'))
-                    ->first();
 
                 // Storing session values
                 $this->setUserSession($user);
@@ -132,11 +92,13 @@ class Home extends BaseController
                 }elseif ($user['role'] == 3) {
                     return redirect()->to(base_url('plaintiff'));
                 }
+                
             }
         }
 
         return view('signin');
     }
+
 
 
 
