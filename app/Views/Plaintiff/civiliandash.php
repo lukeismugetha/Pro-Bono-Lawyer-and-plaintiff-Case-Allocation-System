@@ -108,12 +108,13 @@ http://www.tooplate.com/view/2080-minimax
 			
 				
 					<div class="col-md-4 col-sm-4">
-					<form action="<?= base_url("/button") ?>" method="post" role="form">
 						<input name="profile" type="submit" class="form-control" id="profile" value="profile">
 						<input name="case" type="submit" class="form-control" id="case" value="Register a case">
 						<input name="pending" type="submit" class="form-control" id="pending" value="My pending cases">
 						<input name="law" type="submit" class="form-control" id="law" value="My lawyer cases">
-					</form>
+
+						<a class="form-control" href="<?= base_url("/case") ?>">Profile</a>
+				
 					</div>
 				</div>
 				<div class="col-md-1 col-sm-1"></div>

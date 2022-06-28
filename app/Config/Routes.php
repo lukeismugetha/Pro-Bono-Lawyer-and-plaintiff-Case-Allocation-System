@@ -55,6 +55,15 @@ $routes->group("plaintiff", ["filter" => "auth"], function ($routes) {
     $routes->get("/", "PlaintiffController::plaintiff");
 });
 
+//Making a case route
+// Plaintiff routes
+$routes->group("case", ["filter" => "auth"], function ($routes) {
+    $routes->get("/", "PlaintiffController::case");
+});
+
+//getting subcategories
+$routes->get("/getCaseCat/(:num)", "PlaintiffController::getCaseCat/$1");
+
 $routes->get('/logout', 'Home::logout');
 
 

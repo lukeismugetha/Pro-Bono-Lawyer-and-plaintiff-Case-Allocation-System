@@ -10,40 +10,47 @@ class UserModel extends Model{
     protected $table='Users';
     protected $beforeInsert = ['beforeInsert'];
     protected $beforeUpdate = ['beforeUpdate'];
+    protected $db,$builder;
+    
+    function __construct(){
+        $db = \Config\Database::connect();
+        $this->builder = $db->table($this->table);
+    }
 
     protected function beforeInsert(array $data){
-        $data = $this->passwordHash($data);
-    
-        return $data;
-      }
-    
-      protected function beforeUpdate(array $data){
-        $data = $this->passwordHash($data);
-    
-        return $data;
-      }
-    
-      protected function passwordHash(array $data){
-        if(isset($data['data']['password']))
-          $data['data']['password'] = password_hash($data['data']['password'], PASSWORD_DEFAULT);
-    
-        return $data;
-      }
-    // protected $db,$builder;
-    
-    // function __construct(){
-    //     $db = \Config\Database::connect();
-    //     $this->builder = $db->table($this->table);
-    // }
+      $data = $this->passwordHash($data);
+  
+      return $data;
+    }
+  
+    protected function beforeUpdate(array $data){
+      $data = $this->passwordHash($data);
+  
+      return $data;
+    }
+  
+    protected function passwordHash(array $data){
+      if(isset($data['data']['password']))
+        $data['data']['password'] = password_hash($data['data']['password'], PASSWORD_DEFAULT);
+  
+      return $data;
+    }
 
-    // public function getAllUsers(){
-    //     return $this->builder->get()->getResultArray();
-    // }
-    // public function getUserWhere($condition){
-    //     return $this->builder->where($condition)->get()->getResultArray()[0];
-    //     return $this->builder->where($condition)->get()->getResultArray();
-    // }
+    public function saveData($data){
+      $this->builder->insert($data);
+    }
 
+    public function getAllUsers(){
+        return $this->builder->get()->getResultArray();
+    }
+    public function getUserWhere($condition){
+       $result = $this->builder->where($condition)->get()->getResultArray();
+      // dd($result);
+      if(empty($result)) {
+        return false;
+        }
+        return $result[0];
+    }
     
 }
 

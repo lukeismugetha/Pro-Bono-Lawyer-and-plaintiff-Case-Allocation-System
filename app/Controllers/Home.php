@@ -36,7 +36,7 @@ class Home extends BaseController
                     'password' => $this->request->getPost('password_1'),
                     'role' => $this->request->getPost('role'),
                 ];
-                $userModel->save($data);
+                $userModel->saveData($data);
                 $session = session();
                 $session -> setFlashdata('success', 'Sucesful registration');
                 echo view('signin');
@@ -66,10 +66,8 @@ class Home extends BaseController
                 ],
             ];
             $model = new UserModel();
-            $user = $model->where('Email', $this->request->getVar('Email'))
-                    ->first();
+            $user = $model->getUserWhere(['Email' => $this->request->getVar('Email')]);
 
-            // if (! $user) {
             if (! $this -> validate($rules, $errors)) {
      
                 $data['validation'] = $this->validator;
