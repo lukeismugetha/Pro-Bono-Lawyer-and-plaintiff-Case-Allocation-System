@@ -3,8 +3,8 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\CaseTypes;
-use App\Models\CaseCategories;
+use App\Models\CaseTypesModel;
+use App\Models\CaseCategoriesModel;
 
 class PlaintiffController extends BaseController
 {
@@ -22,21 +22,20 @@ class PlaintiffController extends BaseController
 
     public function Case()
     {
-        $caseCategories = new CaseCategories();
-        $caseCat = $caseCategories->findAll();
-        session()->set('casecatgories', $caseCat);
-
-        $caseTypes = new CaseTypes();
-        $caseT['data'] = $caseTypes->findAll();
-        //session()->set('casecatgories', $casecats);
-
-        return view('Plaintiff/case', $caseT);
+        
+        $caseTypes = new CaseTypesModel();
+        $caseCategories = $caseTypes->getAllCategories();
+        session()->set('caseCategories', $caseCategories);
+        return view('Plaintiff/case');
     }
-    public function getCaseCat($catid=0){
+    public function getCaseCategoriesWhere($catid=0){
 
-        $caseCategories = new CaseCategories();
-        $caseCat = $caseCategories->getCats($catid);
-        dd($caseCat);
+   
+        $caseCategories = new CaseCategoriesModel();     
+        $result = $caseCategories->getcasetypeWhere((['CaseType' => $catid]));
+        echo json_encode($result);
+        return true;
+        
     }
 
 }

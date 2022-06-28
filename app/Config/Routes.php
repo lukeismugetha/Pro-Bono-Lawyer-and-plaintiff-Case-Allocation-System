@@ -62,7 +62,7 @@ $routes->group("case", ["filter" => "auth"], function ($routes) {
 });
 
 //getting subcategories
-$routes->get("/getCaseCat/(:num)", "PlaintiffController::getCaseCat/$1");
+$routes->get("/getCaseCategoriesWhere/(:num)", "PlaintiffController::getCaseCategoriesWhere/$1");
 
 $routes->get('/logout', 'Home::logout');
 

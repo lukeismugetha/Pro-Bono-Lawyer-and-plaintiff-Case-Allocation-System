@@ -108,27 +108,18 @@ http://www.tooplate.com/view/2080-minimax
                 <select name="casecategory" id="category-dropdown" class="form-control">
                   <option value="0">Select</option>
                   <?php
-                    foreach($data as $cat){
-                      echo '<option value="'.$cat['ID'].'">'.$cat['Type'].'</option>';
-                      $catid = $cat['ID'];
+                  $caseCategories = session()->get('caseCategories');
+                    foreach($caseCategories as $caseCategories){
+                      echo '<option value="'.$caseCategories['ID'].'">'.$caseCategories['Type'].'</option>';
                     }
                   ?>
                 </select>
               </div>
               <div class="form-group">
                 <label for="">Case Sub Category</label>
-                <select name="" id="" class="form-control">
+                <select name="" id="subcategory-dropdown" class="form-control">
                 <option value="0">Select</option>
-                  <?php 
-                    $casecat = session()->get('casecatgories');
-                    foreach($casecat as $data){
-                      $casecatID = $data['CaseType'];
-                      if($catid == $casecatID){
-                        echo '<option value="'.$data['ID'].'">'.$data['Case_Category'].'</option>';
-                      }
-                    }
-                  ?>
-                  
+                
                 </select>
               </div>    			    
 					 </div>
@@ -223,18 +214,29 @@ http://www.tooplate.com/view/2080-minimax
 <script src="assets/js/isotope.js"></script>
 <script src="assets/js/imagesloaded.min.js"></script>
 <script src="assets/js/custom.js"></script>
+
+
 <script>
 $(document).ready(function() {
-$('#category-dropdown').on('change', function() {
+$('#category-dropdown').change(function() {
 cid = $('#category-dropdown').val();
 $.ajax({
-  url: '<?= base_url('getCaseCat/') ?>' + cid,
-  type: "POST",
-  success:function(result){
-    alert(result)
+  url: '<?= base_url('getCaseCategoriesWhere') ?>' + "/" + cid,
+  type: "GET",
+  success:function(data){
+    const obj = $.parseJSON(data)
+    console.log(obj[0]);
+    var html = '';
+    var i;
+    var j;
+    for(i=0; i<obj.length; i++){
+        html += '<option value='+obj[i].ID+'>'+obj[i].Case_Category+'</option>';
+        console.log(obj[i].Case_Category)
+      
+    }
+  $('#subcategory-dropdown').html(html);
   }  
 });
-alert(cid)
 });
 });
 </script>

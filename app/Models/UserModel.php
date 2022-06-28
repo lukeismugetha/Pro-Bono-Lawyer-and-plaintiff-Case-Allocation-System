@@ -45,7 +45,6 @@ class UserModel extends Model{
     }
     public function getUserWhere($condition){
        $result = $this->builder->where($condition)->get()->getResultArray();
-      // dd($result);
       if(empty($result)) {
         return false;
         }
